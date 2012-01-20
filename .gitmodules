@@ -3,7 +3,7 @@
 	url = git://github.com/zendframework/zf2.git
 [submodule "module/ZfPhpcrOdm"]
 	path = module/ZfPhpcrOdm
-	url = git@github.com:Ocramius/ZfPhpcrOdm.git
+	url = git://github.com/Ocramius/ZfPhpcrOdmSample.git
 [submodule "module/ZfPhpcrOdmSample"]
 	path = module/ZfPhpcrOdmSample
-	url = git@github.com:Ocramius/ZfPhpcrOdmSample.git
+	url = git://github.com/Ocramius/ZfPhpcrOdmSample.git
