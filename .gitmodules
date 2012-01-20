@@ -1,3 +1,9 @@
 [submodule "vendor/ZendFramework"]
 	path = vendor/ZendFramework
 	url = git://github.com/zendframework/zf2.git
+[submodule "module/ZfPhpcrOdm"]
+	path = module/ZfPhpcrOdm
+	url = git@github.com:Ocramius/ZfPhpcrOdm.git
+[submodule "module/ZfPhpcrOdmSample"]
+	path = module/ZfPhpcrOdmSample
+	url = git@github.com:Ocramius/ZfPhpcrOdmSample.git
