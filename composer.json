@@ -1,0 +1,7 @@
+{
+    "require": {
+        "ocramius/OcraComposer": "dev-master",
+        "doctrine/DoctrineModule": "dev-master",
+        "doctrine/DoctrineORMModule": "dev-master"
+    }
+}

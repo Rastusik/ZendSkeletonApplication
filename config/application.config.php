@@ -2,6 +2,9 @@
 return array(
     'modules' => array(
         'Application',
+        'OcraComposer',
+        'DoctrineModule',
+        'DoctrineORMModule',
     ),
     'module_listener_options' => array( 
         'config_cache_enabled' => false,
@@ -9,6 +12,8 @@ return array(
         'module_paths' => array(
             './module',
             './vendor',
+            './vendor/ocramius',
+            './vendor/doctrine',
         ),
     ),
 );
