@@ -2,6 +2,7 @@
 return array(
     'modules' => array(
         'Application',
+        'OcraComposer',
         'ZfPhpcrOdm',
         'ZfPhpcrOdmSample',
     ),
@@ -11,6 +12,7 @@ return array(
         'module_paths' => array(
             './module',
             './vendor',
+            './vendor/ocramius',
         ),
     ),
 );

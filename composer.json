@@ -1,0 +1,7 @@
+{
+    "require": {
+        "ocramius/OcraComposer": "dev-master",
+        "ocramius/ZfPhpcrOdm": "dev-master",
+        "ocramius/ZfPhpcrOdmSample": "dev-master",
+    }
+}
