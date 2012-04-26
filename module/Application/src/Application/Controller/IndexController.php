@@ -20,7 +20,9 @@ class IndexController extends ActionController
         }
         $dumper = new \Zend\Di\Instance\Dumper($this->locator);
         var_dump($dumper->getInitialInstanceDefinitions());
-        var_dump($dumper->getInjectedDefinitions(__CLASS__));
+        var_dump($dumper->getInjectedDefinitions($dumper->getInitialInstanceDefinitions()));
+        $compiler = new \Zend\Di\Instance\Compiler($dumper);
+        echo $compiler->getCodeGenerator()->generate();
 
 
         die();
