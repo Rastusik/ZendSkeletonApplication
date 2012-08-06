@@ -1,11 +1,10 @@
 <?php
-// module/Application/src/Application/Service/GreetingService.php
 
 namespace Application\Service;
 
 use Application\Repository\StaticGreetingRepository;
 
-class GreetingService
+class GreetingService implements GreetingServiceInterface
 {
     /**
      * @var StaticGreetingRepository
@@ -21,8 +20,7 @@ class GreetingService
     }
 
     /**
-     * @var string $name
-     * @return string
+     * {@inheritDoc}
      */
     public function greet($name)
     {

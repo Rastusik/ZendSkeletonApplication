@@ -1,14 +1,13 @@
 <?php
-// module/Application/src/Application/Repository/StaticGreetingRepository.php
 
 namespace Application\Repository;
 
-class StaticGreetingRepository
+class StaticGreetingRepository implements GreetingRepositoryInterface
 {
     protected $availableGreetings = array('Hi', 'Hello', 'Hey', 'What\'s up');
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getRandomGreeting()
     {

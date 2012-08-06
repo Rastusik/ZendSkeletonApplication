@@ -1,23 +1,22 @@
 <?php
-// module/Application/src/Application/Controller/GreetingController.php
 
 namespace Application\Controller;
 
-use Application\Service\GreetingService;
+use Application\Service\GreetingServiceInterface;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class GreetingController extends AbstractActionController
 {
     /**
-     * @var GreetingService
+     * @var GreetingServiceInterface
      */
     protected $greetingService;
 
     /**
-     * @var GreetingService $greetingService
+     * @var GreetingServiceInterface $greetingService
      */
-    public function __construct(GreetingService $greetingService)
+    public function __construct(GreetingServiceInterface $greetingService)
     {
         $this->greetingService = $greetingService;
     }

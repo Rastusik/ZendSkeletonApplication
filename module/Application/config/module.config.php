@@ -22,6 +22,11 @@ return array(
                 // dependencies are inherited from Zend\Mvc\Controller\AbstractController
                 'Zend\EventManager\EventManagerInterface' => 'EventManager',
                 'Zend\ServiceManager\ServiceLocatorInterface' => 'ServiceManager',
+
+                // additional preferences to map abstract types to concrete implementations
+                // in the greeting logic
+                'Application\Service\GreetingServiceInterface' => 'Application\Service\GreetingService',
+                'Application\Repository\GreetingRepositoryInterface' => 'Application\Repository\StaticGreetingRepository',
             ),
         ),
     ),
