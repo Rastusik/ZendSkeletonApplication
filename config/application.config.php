@@ -1,6 +1,7 @@
 <?php
 return array(
     'modules' => array(
+        'ZendDeveloperTools',
         'Application',
     ),
     'module_listener_options' => array(

@@ -8,8 +8,36 @@
  */
 
 return array(
+    'di' => array(
+        'allowed_controllers' => array(
+            // this config is required, otherwise the MVC won't even attempt to ask Di for the controller!
+            'Application\Controller\GreetingController',
+        ),
+
+        'instance' => array(
+            'preference' => array(
+                // these allow injecting correct EventManager and ServiceManager
+                // (taken from the main ServiceManager) into the controller,
+                // because Di doesn't know how to retrieve abstract types. These
+                // dependencies are inherited from Zend\Mvc\Controller\AbstractController
+                'Zend\EventManager\EventManagerInterface' => 'EventManager',
+                'Zend\ServiceManager\ServiceLocatorInterface' => 'ServiceManager',
+            ),
+        ),
+    ),
+
     'router' => array(
         'routes' => array(
+            'hello' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/hello',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\GreetingController',
+                        'action' => 'hello',
+                    ),
+                ),
+            ),
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -71,6 +99,17 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
+
+        // uncomment following to verify the performance difference in using Zend\Di or a service factory
+        /*'factories' => array(
+            'Application\Controller\GreetingController' => function($sm) {
+                return new \Application\Controller\GreetingController(
+                    new \Application\Service\GreetingService(
+                        new \Application\Repository\StaticGreetingRepository()
+                    )
+                );
+            },
+        ),*/
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
