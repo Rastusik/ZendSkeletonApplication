@@ -20,13 +20,23 @@ return array(
                 // (taken from the main ServiceManager) into the controller,
                 // because Di doesn't know how to retrieve abstract types. These
                 // dependencies are inherited from Zend\Mvc\Controller\AbstractController
-                'Zend\EventManager\EventManagerInterface' => 'EventManager',
-                'Zend\ServiceManager\ServiceLocatorInterface' => 'ServiceManager',
+                'Zend\EventManager\EventManagerInterface' => 'Zend\EventManager\EventManager',
+                'Zend\ServiceManager\ServiceLocatorInterface' => 'Zend\ServiceManager\ServiceManager',
 
                 // additional preferences to map abstract types to concrete implementations
                 // in the greeting logic
                 'Application\Service\GreetingServiceInterface' => 'Application\Service\GreetingService',
                 'Application\Repository\GreetingRepositoryInterface' => 'Application\Repository\StaticGreetingRepository',
+
+                // since now also dependencies of EventManager are crawled, we need to define type preferences also
+                // for SharedEventManagerInterface
+                'Zend\EventManager\SharedEventManagerInterface' => 'Zend\EventManager\SharedEventManager',
+            ),
+
+            'Application\Controller\GreetingController' => array(
+                // simply defining a config key for the controller. This forces the Di compiler to crawl it
+                // when generating a container
+                'shared' => true,
             ),
         ),
     ),
