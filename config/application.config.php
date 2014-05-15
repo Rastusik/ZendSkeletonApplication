@@ -6,6 +6,9 @@ return array(
         'ZendDeveloperTools',
         'Application',
         'CustomRoute',
+        'Fieldsets',
+        'AssetManager',
+        'SxBootstrap',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
