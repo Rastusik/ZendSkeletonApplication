@@ -11,7 +11,7 @@ class Module
         return array(
             'controllers' => array(
                 'invokables' => array(
-                    FieldsetExampleController::class => FieldsetExampleController::class,
+                    AnnotationBuilderController::class => AnnotationBuilderController::class,
                 ),
             ),
             'router' => array(
@@ -21,7 +21,7 @@ class Module
                         'options' => array(
                             'route' => '/fieldsets',
                             'defaults' => array(
-                                'controller' => FieldsetExampleController::class,
+                                'controller' => AnnotationBuilderController::class,
                                 'action'     => 'index',
                             ),
                         ),

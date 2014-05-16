@@ -2,7 +2,7 @@
 
 namespace Fieldsets\Fieldset;
 
-use Fieldsets\Entity\User;
+use Fieldsets\Entity\BlogPost;
 use Zend\Form\Element\Email;
 use Zend\Form\Fieldset;
 use Zend\Stdlib\Hydrator\ClassMethods;
@@ -14,7 +14,7 @@ class UserFieldset extends Fieldset
         parent::__construct('user');
 
         $this->setHydrator(new ClassMethods());
-        $this->setObject(new User());
+        $this->setObject(new BlogPost());
 
         $this->add([
             'name'    => 'name',

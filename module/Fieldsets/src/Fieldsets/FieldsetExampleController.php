@@ -2,7 +2,7 @@
 
 namespace Fieldsets;
 
-use Fieldsets\Entity\User;
+use Fieldsets\Entity\BlogPost;
 use Fieldsets\Form\CreateUserForm;
 use Zend\Mvc\Controller\AbstractActionController;
 
@@ -10,7 +10,7 @@ class FieldsetExampleController extends AbstractActionController
 {
     public function indexAction()
     {
-        $user       = new User();
+        $user       = new BlogPost();
         $createUser = new CreateUserForm();
 
         $createUser->bind($user);
