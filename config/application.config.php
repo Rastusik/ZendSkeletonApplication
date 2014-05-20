@@ -10,6 +10,10 @@ return array(
         'AssetManager',
         'SxBootstrap',
         'AnnotationBuilder',
+        'ZfcBase',
+        'ZfcUser',
+        //'BjyAuthorize',
+        //'ZfcRbac',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

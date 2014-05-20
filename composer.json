@@ -15,6 +15,9 @@
         "ocramius/ocra-service-manager": "2.1.*",
         "spoonx/sxbootstrap": "2.*",
         "rwoverdijk/assetmanager": "1.3.*",
-        "doctrine/annotations": "1.*"
+        "doctrine/annotations": "1.*",
+        "zf-commons/zfc-user": "~1.0.0",
+        "bjyoungblood/bjy-authorize": "~1.4.0",
+        "zf-commons/zfc-rbac": "~2.3.0"
     }
 }
