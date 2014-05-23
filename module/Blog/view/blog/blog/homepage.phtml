@@ -1,0 +1,20 @@
+<h1>BLOG HOMEPAGE</h1>
+
+<ol>
+<?php
+/* @var $blogPosts \Blog\Entity\BlogPost[] */
+
+foreach ($blogPosts as $blogPost) {
+?>
+    <li>
+        <h2>
+            <a href="<?=
+                $this->escapeHtmlAttr($this->url('blogpost', ['blogPostId' => $blogPost->getId()]));
+            ?>">
+                <?= $this->escapeHtml($blogPost->getTitle()); ?>
+            </a>
+        </h2>
+        <div><?= $this->escapeHtml($blogPost->getContent()); ?></div>
+    </li>
+<?php } ?>
+</ol>

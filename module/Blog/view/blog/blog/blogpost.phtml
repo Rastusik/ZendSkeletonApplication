@@ -1,0 +1,24 @@
+<?php /* @var $blogPost \Blog\Entity\BlogPost */ ?>
+<h1><?= $this->escapeHtml($blogPost->getTitle()); ?></h1>
+<p>
+    <?= $this->escapeHtml($blogPost->getContent()); ?>
+</p>
+
+<h4>Post a comment:</h4>
+
+<form action="" method="POST">
+    <input type="text" name="author" placeholder="Author Name"/>
+    <textarea name="content"></textarea>
+    <input type="submit"/>
+</form>
+
+<ol>
+    <?php foreach ($blogPost->getComments() as $comment) { ?>
+    <li>
+        <h5><?= $this->escapeHtml($comment->getAuthor()); ?></h5>
+        <p><?= $this->escapeHtml($comment->getContent()); ?></p>
+    </li>
+    <?php } ?>
+</ol>
+
+<?= $this->sxbForm($form); ?>
