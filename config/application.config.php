@@ -1,7 +1,7 @@
 <?php
 return array(
     'modules' => array(
-        'OcraDiCompiler',
+        'DI\ZendFramework2',
         'ZendDeveloperTools',
         'Application',
     ),
@@ -12,6 +12,12 @@ return array(
         'module_paths' => array(
             './module',
             './vendor',
+        ),
+    ),
+    'service_manager' => array(
+        // ...
+        'factories' => array(
+            'DI\Container' => 'DI\ZendFramework2\\Service\\DIContainerFactory',
         ),
     ),
 );

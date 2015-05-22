@@ -9,17 +9,10 @@ use Zend\View\Model\ViewModel;
 class GreetingController extends AbstractActionController
 {
     /**
+     * @Inject
      * @var GreetingServiceInterface
      */
     protected $greetingService;
-
-    /**
-     * @var GreetingServiceInterface $greetingService
-     */
-    public function __construct(GreetingServiceInterface $greetingService)
-    {
-        $this->greetingService = $greetingService;
-    }
 
     public function helloAction()
     {

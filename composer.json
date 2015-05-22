@@ -1,16 +1,37 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
-    "license": "BSD-3-Clause",
-    "keywords": [
-        "framework",
-        "zf2"
-    ],
-    "homepage": "http://framework.zend.com/",
-    "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "dev-master",
-        "zendframework/zend-developer-tools": "dev-master",
-        "ocramius/ocra-di-compiler": "dev-master"
+  "name": "zendframework/skeleton-application",
+  "description": "Skeleton Application for ZF2",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "framework",
+    "zf2"
+  ],
+  "homepage": "http://framework.zend.com/",
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "version": "dev-master",
+        "name": "php-di/php-di-zf2",
+        "source": {
+          "url": "https://github.com/Rastusik/PHP-DI-ZF2.git",
+          "type": "git",
+          "reference": "zf24"
+        }
+      }
     }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "zendframework/zendframework": "dev-master",
+    "zendframework/zend-developer-tools": "dev-master",
+    "mnapoli/php-di": "*",
+    "php-di/php-di-zf2": "dev-master"
+  },
+  "autoload": {
+    "classmap": [
+      "module/",
+      "vendor/"
+    ]
+  }
 }

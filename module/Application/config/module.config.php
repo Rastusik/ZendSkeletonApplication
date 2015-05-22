@@ -8,39 +8,6 @@
  */
 
 return array(
-    'di' => array(
-        'allowed_controllers' => array(
-            // this config is required, otherwise the MVC won't even attempt to ask Di for the controller!
-            'Application\Controller\GreetingController',
-        ),
-
-        'instance' => array(
-            'preference' => array(
-                // these allow injecting correct EventManager and ServiceManager
-                // (taken from the main ServiceManager) into the controller,
-                // because Di doesn't know how to retrieve abstract types. These
-                // dependencies are inherited from Zend\Mvc\Controller\AbstractController
-                'Zend\EventManager\EventManagerInterface' => 'Zend\EventManager\EventManager',
-                'Zend\ServiceManager\ServiceLocatorInterface' => 'Zend\ServiceManager\ServiceManager',
-
-                // additional preferences to map abstract types to concrete implementations
-                // in the greeting logic
-                'Application\Service\GreetingServiceInterface' => 'Application\Service\GreetingService',
-                'Application\Repository\GreetingRepositoryInterface' => 'Application\Repository\StaticGreetingRepository',
-
-                // since now also dependencies of EventManager are crawled, we need to define type preferences also
-                // for SharedEventManagerInterface
-                'Zend\EventManager\SharedEventManagerInterface' => 'Zend\EventManager\SharedEventManager',
-            ),
-
-            'Application\Controller\GreetingController' => array(
-                // simply defining a config key for the controller. This forces the Di compiler to crawl it
-                // when generating a container
-                'shared' => true,
-            ),
-        ),
-    ),
-
     'router' => array(
         'routes' => array(
             'hello' => array(
@@ -58,7 +25,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Application\Controller\IndexController',
                         'action'     => 'index',
                     ),
                 ),
@@ -109,22 +76,6 @@ return array(
                 'pattern'  => '%s.mo',
             ),
         ),
-    ),
-    'controllers' => array(
-        'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
-        ),
-
-        // uncomment following to verify the performance difference in using Zend\Di or a service factory
-        /*'factories' => array(
-            'Application\Controller\GreetingController' => function($sm) {
-                return new \Application\Controller\GreetingController(
-                    new \Application\Service\GreetingService(
-                        new \Application\Repository\StaticGreetingRepository()
-                    )
-                );
-            },
-        ),*/
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
